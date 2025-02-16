@@ -55,4 +55,4 @@ cd open-webui
 
 ## Contact
 
-Your Name - [aikopoko,np@gmail.com](mailto:aikopoko,np@gmail.com)
+AikoPoko - [aikopoko.np@gmail.com](mailto:aikopoko.np@gmail.com)
