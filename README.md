@@ -187,6 +187,7 @@ location / {
     ```bash
     docker ps
     ```
+    ![docker-ps-screenshot](https://github.com/aikopoko/Deep-Seek-Nginx-Docker/blob/main/Screenshot%202025-03-03%20164454.png)
   - prepare your files and open the terminal where your files are and run this command to copy your files to the container, for me the name of container is `open-webui`.
     <br/> For example this is dummy command
     ```bash
