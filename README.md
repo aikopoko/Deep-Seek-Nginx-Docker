@@ -12,6 +12,7 @@ This guide provides step-by-step instructions to host **DeepSeek** using **Nginx
 - [Commands](#commands)
 - [Docker compose yaml file](#docker-compose-yaml-file)
 - [Nginx configuration](#nginx-configuration)
+- [Custom Branding](#custom-branding)
 - [Contact](#contact)
 
 ---
@@ -168,6 +169,35 @@ location / {
 
 }
 ```
+---
+## Custom Branding
+- edit file backend\open_webui\env.py and find below code and comment/modify this variable
+  ```.env
+  # WEBUI_NAME = os.environ.get("WEBUI_NAME", "Open WebUI")
+  # if WEBUI_NAME != "Open WebUI":
+  #     WEBUI_NAME += " (Open WebUI)"
+  WEBUI_NAME = "Aikopoko"
+  ```
+- Re build the docker-containers
+  ```bash
+  docker-compose up --build -d
+  ```
+- copy logo and favicon to docker container
+  - get the name of your container
+    ```bash
+    docker ps
+    ```
+  - prepare your files and open the terminal where your files are and run this command to copy your files to the container, for me the name of container is `open-webui`.
+    <br/> For example this is dummy command
+    ```bash
+      docker cp source_path container_name:destination_path
+    ```
+    <br/> You do not need to change the destination path.
+    ```bash
+    docker cp .\splash.png open-webui:/app/backend/open_webui/static/splash.png
+    docker cp .\favicon-96x96.png open-webui:/app/build/favicon/favicon-96x96.png
+    docker cp .\favicon.svg open-webui:/app/build/favicon/favicon.svg
+    ```
 ---
 ## Contact
 
